@@ -1,0 +1,39 @@
+Docker Commands =>
+
+/*Used for running the container with required environment variables*/
+docker run --name some-postgres -e POSTGRES_PASSWORD=password -d postgres
+
+/*Used for chaging the container name or differernt name using the Docker Command*/
+docker run --name my-postgres -e POSTGRES_PASSWORD=password -d postgres
+
+/*To Change the name of the Container*/
+docker run --name new_container_name -d image_name
+
+/*To move to the Present Container in the command prompt*/
+docker exec -it [CONTAINER_ID] /bin/bash
+	*env => for checking entire specification of the Container
+	*ls => listing all the modules 
+	*pwd => present working directory
+	*exit => for exiting the pwd terminal and go back to the default workspace
+
+DOCKER RUN => Where u create a new container from image
+DOCKER START => works with containers, not with images
+
+WORKFLOW WITH DOCKER :-
+CODE => GITHUB => JENKINS => PRODUCRS ARTIFACTS => DOCKER/PRIVATE REPOSITORY => DEV SERVER PULLS TWO IMAGES[EX(JS , MONGODB)] => DOCKER HUB
+
+HOST & CONTAINER PORT NUMBERS =>
+EX : 8080/1234, 8080 is host and 1234 is the container port numbers.
+
+/*HOW TO USE DOCKER IN LOCAL DEVELOPMENT DEVICE || DOCKER IN SOFTWARE DEVELOPMENT*/
+
+	*CREATE A PROJECT
+	*DOCKER NETWORK => MAKES A CONNECTION
+
+/*MYSQL INSTANCE STARTER*/
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+
+/*DOCKER FILE*/
+Move the project----------------------------------->Docker Image
+		  copy artifact(jar,war,bundle)
+Blueprint for building images are called Docker File.
