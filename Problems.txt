@@ -1,0 +1,11 @@
+Hello, World! Write a program that prints “Hello, World!” to the console.✅
+Sum of Two Numbers Write a program that takes two integers as input and prints their sum.✅
+Factorial Write a program that calculates the factorial of a number.
+Fibonacci Series Write a program that prints the first N numbers in the Fibonacci series.
+Prime Number Write a program that checks if a number is prime or not.
+Reverse a String Write a program that reverses a string.
+Array Sorting Write a program that sorts an array of integers in ascending order.
+Matrix Multiplication Write a program that multiplies two matrices.
+File Operations Write a program that creates a file, writes some text into it, then reads the text from the file and prints it to the console.
+Structures Define a structure to represent a complex number (real and imaginary parts). Write functions to add, subtract, multiply and divide two complex numbers.
+******************************************************************************************************************************************************************
