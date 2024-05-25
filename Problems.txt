@@ -1,6 +1,6 @@
 Hello, World! Write a program that prints “Hello, World!” to the console.✅
 Sum of Two Numbers Write a program that takes two integers as input and prints their sum.✅
-Factorial Write a program that calculates the factorial of a number.
+Factorial Write a program that calculates the factorial of a numbers using types of numerics.
 Fibonacci Series Write a program that prints the first N numbers in the Fibonacci series.
 Prime Number Write a program that checks if a number is prime or not.
 Reverse a String Write a program that reverses a string.
