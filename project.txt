@@ -1,0 +1,4 @@
+Theertha creates polices 
+that policies utilized by Harsha to apply and he can check History(he Applied and View whether its under Pending,Approved or rejected)
+Now Ashish View policies applied by Harsha
+     Ashish Will do Approve or Reject and Delete Application of customer policies
