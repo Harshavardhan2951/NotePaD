@@ -18,3 +18,6 @@ git remote add origin <Repository Link> : To Define the Repository link
 git ls-tree --full-tree -r --name-only HEAD :To list all committed files being tracked by your Git repo
 
 git remote rm <Remote-Name> : Used to remove the remote
+
+git pull --rebase origin main : if any error in pushing to the repo like [remote contains the work that you do not have locally || it is rejected to push because at the tip of the branch].
+git push -u origin main : after rebase push it, this will work
