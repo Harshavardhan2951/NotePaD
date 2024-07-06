@@ -1,0 +1,106 @@
+Pipeline Syntax is of two types >=
+1.Scripted :
+	*first Syntax
+	*Groovy Engine
+	*Advanced Scripting capabilities, high flexibilites
+	*Difficult to start
+2.Declarative :
+	*Recent Addition
+	*Easier to get Started but not that powerful
+	*pre-defined structure
+
+Note : 
+	"pipeline" : must be top level
+	"agent" : where to execute
+	"stages" : where the 'work' happens
+		
+
+/*Basic Syntax fot the Jenkins File
+pipeline{
+    agent any
+    stages {
+        stage("build") {
+            steps{
+                echo 'Building the Applicaiton...'
+            }
+        }
+        stage("test") {
+            steps{
+                echo 'Testing the Applicaiton...'
+            }
+        }
+        stage("build") {
+            steps{
+                echo 'Deploying the Applicaiton...'
+            }
+        }
+    }
+}*/
+
+/*Execute some logic AFTER all stages executed
+    *Condition : 
+                always
+                success
+                failure
+*/
+
+DEFINE CONDITIONS FOR EACH STAGE : 
+pipeline{
+    agent any
+    stages {
+        stage("build") {
+            steps{
+                echo 'Building the Applicaiton...'
+            }
+        }
+        stage("test") {
+
+            steps{
+                echo 'Testing the Applicaiton...'
+            }
+        }
+        stage("build") {
+            steps{
+                echo 'Deploying the Applicaiton...'
+            }
+        }
+    }
+}
+
+ENVIRONMENT VARIABLES : 
+?What variables are available from Jenkins. :> localhost:8080/env-vars.html
+pipeline{
+    agent any
+    environnment  {
+        NEW_VERSION = '1.3.0'
+    }
+    stages {
+        stage("build") {
+            steps{
+                echo 'Building the Applicaiton...'
+                echo "Building version ${NEW_VERSION}..."
+            }
+        }
+        stage("test") {
+            when{
+                expression {
+                    
+                }
+            }
+            steps{
+                echo 'Testing the Applicaiton...'
+            }
+        }
+        stage("build") {
+            steps{
+                echo 'Deploying the Applicaiton...'
+            }
+        }
+    }
+}
+
+/*Using Credentials in Jenkinsfile*/
+
+
+
+

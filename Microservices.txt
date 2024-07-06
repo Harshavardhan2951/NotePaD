@@ -1,0 +1,140 @@
+spring Microservices =>
+
+Interface :
+Repository
+
+
+[IMP] Common property name to exist in all the projects
+**To change the company name in all the services => 
+
+using Spring Framework ?
+  *Fast Development
+  *Less Configuration
+  *Auto Configuration
+  *Embeded Server
+  *Production Ready
+
+SPRING CLOUD =>
+Is a Collection of projects or libraries
+
+Monolithinc ?
+UI > [CUSTOMER MODULE > EMPLOYEE MODULE > COURSE MODULE > ADDRESS MODULE]components > DAO LAYER.
+Wrapping entire project in one zip file and deploy it, this is known as Monolithic Application.
+
+What & Why & How is Microservices ?
+	*creating a seperate new projcts using each component.
+	*Building small Applications || small services are called as Spring Microservices.
+	*They are independently Deployable
+
+Disadvantages of Microservices =>
+	*Building different db
+
+Loose Coupling =>
+	Different parts of program dont rely too much on each other, like they work more independently
+  makeing the program more easier to change and maintain, it's like each part is doing it's job, without 
+ knowing other parts so much...
+
+Bean Configuration Error => (Manually Config)
+go to the main package > create a class with [anyname] write
+	@Configuration
+	public class <anyName> {
+	example :
+	  @Bean
+	  public RestTemplate resttemplate {
+		return new RestTemplate();	
+	}
+
+Example of Creating microservies and how communication happens between them (mutiple services communication) =>
+*Create two seperate services
+*Requirement :
+	*Go back to the service controller [to get the second data with the first data or vice versa by getmapping request],
+	 so let's consider two services one is Employee SERVICE and other is Address SERVICE..
+	 Make a external Rest API call from Employee SERVICE to Address SERVICE.
+	 todo this add autowire resttemplate inside the restcontoller 
+  The Code is : (This line has to be written in any one of the Service to make use of another service data) :
+	String address = restTemplate.getforObject("localhost:url", String.class);
+	return "<anyString>" + address;
+
+
+PART 2 :-
+In this Chapter there are two services namely Employees and Services..
+Spring Cloud : Will help you to help some challenges, hepls to fix the errors.
+Model Mapper =>
+So if there are thousands of properties it is bit diffucult to create a response object instaed of directly using 
+Entity, so lets go to Model Mapper...
+to do so => 
+Goto Maven Repository > Search ModelMapper > copy & paste inside the pom.xml;
+*Goto Service Class > autowire the ModelMapper inside the Service Class.
+*The main usuage of ModelMapper is instead of using like for eg:
+	+EmployeeResponse employeeResponse = new EmployeeResponse();
+	+employeeResponse.setId(employee.getId());
+	+employeeResponse.setBloodGroup(employee.getBloodGroup());
+	+employeeResponse.setFname(employee.getFname());
+	+employeeResponse.setEmail(employee.getEmail());
+instead of defining the entities line by line we can use in spring called ModelMapper which helps to write all this map into small line for eg:
+	+modelMapper.map(employee[#EntityName], EmployeeResponse.class[#Response class created for using Entity]);
+
+Note //
+so after this u will get an configuration error, to overcome that error u have to create a new package with eg: like config
+class, and define the bean inside them..
+::Let me consider the example of ModelMapper Configuration
+create a Method 
+	@Bean
+	public ModelMapper modelMapper(){
+		return ModelMapper();
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LOAD BALANCER =>
+*If a developer has to send the 100's for api the server gonna block, instead of we can do copy the same service and 
+change the port number for each of this same copied services.	
+*Load Balancer comes with spring it self.
+
+/*If for Eg Service A call the Service B it is done by using Local Call method instaead of Remote call, because to avoid the time period.
+
+/*Dont Hardcore Url*/
+changing the series of url like 192.168.1.1/8080/ and for another service 253.688.123.1./9874, this is called Hardcore Url.
+
+/*Traditional Load Balancer or Router*/
+we can write the algotithm for this to work for eg
+SERVICE A > LOAD BALANCER <[SERVICE B (created an instance of Service B let's take it as we have created 4 instances)]
+http://load-balance/service-b
+so here service a sends a signal to the load-balancer, since load-balancer already has the instances of service B and its ports
+  once the load-balancer receives the signal form servie a, load-balancer understands and sends the requests to each of the 
+  serive b services/components.
+This is also called as Server side load-balancing.
+
+/*DisAdvantager of using Load-Balancer in Microservices*/
+*Need more maintance cost and seperate team
+*Single point of Failure
+*Does not support Scalibility
+
+/*Discovery Service*/
+Load Balancer exists in different server.
+service a > load-balancer < service b
+Whenever we start microservice, we register with Discovery Service, so this Discovery Service get's to know about the entire details such as IP, URL of the Services.
+So Discovery Service helps load balancer discovering the service url's.
+Explanation :
+	*The Client(Service A) makes a request to a server (router/Load balancer/middleman)
+	*That server(Load-Balancer) does the query with the Discovery Service.
+	*The Discovery service responded back with available numbers of instances of service-b that load balancer can call
+	*Then Load balancer server picks up one of the Service B instance and makes a call
+	*Here the service A(client) does'nt talk to the Discovery Service directly, it calls teh another service(laod balancer) which helps to discover service b url info.
+	*This pattern is called Server side Discovery.
+
+What is Clinet Side Discovery ?
+
+

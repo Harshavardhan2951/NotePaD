@@ -1,0 +1,35 @@
+Department Service and User Service
+*We will be saving user from one service and department from another service
+*API GATEWAY : 
+	*All the requests should.nt be going directy to the microservices, it should mandatorily go through the API Gateway to the microservices url pattern.
+	
+*FALLBACK METHOD =>
+	*Fallback method is used, beacause if some service is not working properly we would keep some timing, within this
+	 timeout if it didn't response, we can get to know that this particular microservices is not working fine, you can 	
+	 go with another services, to do this method we need fallback method.
+
+*HYSTRIX/RESILLENCE4J METHOD =>
+	*From this method we can get to know the list of services is not working.
+
+*ZIPKIN & Sleuth libraries=>
+	*If there are multilple microservices, we need to identify which microservices is failing and where our request is 
+	 traversing.
+
+NOTE =>
+*Trace ID will be the unique id in the entire request, thereofore there will be different services with diffrerent span id.
+
+
+After completing Department Service, now let's create user service and from their we can get this particular department
+
+************************************************************************************************************************
+*To integrate one service to the another servive > create a package called valueobject > create the main entity name > copy the properties [Entity] > create a responsetemplatvo class inside the vopackage > inside this create a class and objects for the services with the class name responseTemplateVO > So now I CAN Use this responseTemplateVO as my return type to get the data from this both department and user
+**************************************************************************************************************************
+
+cloud.config.server => Eureka Discovery Client & Config Server
+	spring.cloud.config.server.git.uri={repository https link}
+	spring.cloud.config.server.git.clone-on-start=truen
+Add spring-cloud-starter-config in all the microservices of pom.xml
+And add this in the application.properties of the services like :>
+	spring.cloud.config.enabled=true
+	spring.cloud.config.uri=("paste the url with  the port number used for server-config-git")
+		eg:http://localhost:9296

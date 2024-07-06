@@ -1,0 +1,15 @@
+What is Spring Cloud :
+*Spring Cloud provides tools for dev to quickly build some of the common patterns in distributed systems(eg:configuraion amanagement, service, discovery, circuit breakers, intelligent routing, micro-procxy, contolr bus, one-time tokens,
+global locks, leadership election, distributed sessions, cluster state).
+*Co-ordination of distributes systems leads to boiler plate patterns and using spring cloud dev can quickly stand-up
+services and applications that implement those patterns.
+*They will work well in any distributed environment, including the developer's own laptop, bare metal data centers,
+and managed platforms such as Cloud Foundary.
+
+**************************************************************************************************************************
+
+//After adding config server dependencies, to make it use of this spring cloud, 
+Goto > Spring Application > add > @EnableConfigServer
+
+***************************************************************************************************************************
+The Patterns provided incllude service discovery(Eureka), circuit breaker(Hystrix),Intelligent Routing(zuul) and client-siide load balancing(ribbon)

@@ -1,0 +1,37 @@
+Create (POST):
+
+201 Created: Typically used to indicate a successful creation of a resource. This status is returned when a new resource has been successfully created.
+************************************************************************************************************************
+Read (GET):
+
+200 OK: The request was successful, and the server has returned the requested resource.
+
+404 Not Found: The requested resource could not be found on the server.
+************************************************************************************************************************
+Update (PUT/PATCH):
+
+200 OK: Used to indicate that the resource has been successfully updated.
+
+204 No Content: Often used to indicate a successful update where the response body is intentionally empty.
+************************************************************************************************************************
+Delete (DELETE):
+
+204 No Content: Used to indicate that the resource has been successfully deleted. The response body is usually empty.
+
+404 Not Found: The resource to be deleted was not found.
+
+403 Forbidden or 401 Unauthorized: Depending on the security context, if the client doesn't have permission to delete the resource.
+
+409 Conflict: If the resource can't be deleted due to a conflict or some other reason.
+************************************************************************************************************************
+Error Handling:
+
+400 Bad Request: The server couldn't understand the request due to invalid syntax or other client-side errors.
+
+500 Internal Server Error: Indicates that an unexpected condition was encountered on the server.
+
+401 Unauthorized: If authentication is required and has failed or has not been provided.
+
+403 Forbidden: The client does not have the necessary permissions for the requested operation.
+
+422 Unprocessable Entity: Used for validation errors or other business logic-related errors.

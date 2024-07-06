@@ -37,3 +37,8 @@ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
 Move the project----------------------------------->Docker Image
 		  copy artifact(jar,war,bundle)
 Blueprint for building images are called Docker File.
+
+/*BUILD A OWN DOCKER IMAGE*/
+	*my-app => name of the project
+	*. => location of the docker file
+docker build -t my-app:1:0 .
