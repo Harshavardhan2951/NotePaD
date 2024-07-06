@@ -14,3 +14,7 @@ Then, rename the main branch to master:
 git branch -m master
 
 git remote add origin <Repository Link> : To Define the Repository link 
+
+git ls-tree --full-tree -r --name-only HEAD :To list all committed files being tracked by your Git repo
+
+git remote rm <Remote-Name> : Used to remove the remote
