@@ -10,8 +10,7 @@ git merge: This command merges the specified branch’s history into the current
 
 git stash: This command temporarily saves changes that you don’t want to commit immediately2.
 
-Then, rename the main branch to master:
-git branch -m master
+git branch -m master : Then, rename the main branch to master:
 
 git remote add origin <Repository Link> : To Define the Repository link 
 
