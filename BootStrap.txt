@@ -1,2 +1,0 @@
-Accordion =>
-This is the format where some data will be present inside the heading, when user clicks on that heading, the required data or else corressponding details will be present inside that.
