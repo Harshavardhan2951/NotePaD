@@ -1,14 +1,14 @@
-git config --global user.name "Your Name"
+ git config --global user.name "Your Name"
 
 git config --global user.email "your_email@example.com"
 
-git diff: This command shows the file differences which are not yet staged2.
+git diff: This command shows the file differences which are not yet staged.
 
-git status: This command lists all the files that have to be committed3.
+git status: This command lists all the files that have to be committed.
 
-git merge: This command merges the specified branch’s history into the current branch3.
+git merge: This command merges the specified branch’s history into the current branch.
 
-git stash: This command temporarily saves changes that you don’t want to commit immediately2.
+git stash: This command temporarily saves changes that you don’t want to commit immediately.
 
 git branch -m master : Then, rename the main branch to master:
 
