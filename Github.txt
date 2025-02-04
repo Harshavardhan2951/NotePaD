@@ -24,3 +24,5 @@ git push -u origin main : after rebase push it, this will work
 git rm file1.txt : removes file from filesystem and github
 
 git rm --cached file1.txt : removes file form the github
+
+git reset : Removes the Staged Files
