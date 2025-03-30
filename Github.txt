@@ -26,3 +26,9 @@ git rm file1.txt : removes file from filesystem and github
 git rm --cached file1.txt : removes file form the github
 
 git reset : Removes the Staged Files
+
+git branch : View Local Branches
+
+git branch -r : View Remote branches
+
+git branch -a : View both remote and local branches
