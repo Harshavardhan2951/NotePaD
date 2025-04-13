@@ -34,7 +34,4 @@ git branch -r : View Remote branches
 git config global alias.<Name> "<<Command here> <for eg: log  --oneline --graph --decorate --all">>> : Used to write the command in just one word instead of whole command
 git <alias.name>: after performing the above line try with the this line to test and perform the actions
 
-
-
-
 git branch -a : View both remote and local branches
