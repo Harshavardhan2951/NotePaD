@@ -1,0 +1,10 @@
+################################################
+## Open a Folder and FIles in the FIle Explorer#
+################################################
+open <Path/to/destination> : Opens the FOlder and their files in the FIle Explorer
+
+
+################################################
+##r#
+################################################
+
