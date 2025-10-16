@@ -8,3 +8,4 @@ open <Path/to/destination> : Opens the FOlder and their files in the FIle Explor
 ##r#
 ################################################
 
+which: Command is used to see what is the use of this keyword
