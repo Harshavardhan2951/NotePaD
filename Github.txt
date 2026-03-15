@@ -12,7 +12,7 @@ git stash: This command temporarily saves changes that you don’t want to commi
 
 git branch -m master : Then, rename the main branch to master:
 
-git remote add origin <Repository Link> : To Define the Repository link 
+git remote add <remote-name> <repository-url> : To Define the Repository remote url 
 
 git ls-tree --full-tree -r --name-only HEAD :To list all committed files being tracked by your Git repo
 
