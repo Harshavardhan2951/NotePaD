@@ -1,0 +1,59 @@
+===============================================================================
+GITLAB CI/CD DOCKER BUILD & REGISTRY WORKFLOW STEPS
+===============================================================================
+
+STEP 1: INITIALIZE AND ADD REMOTE REPOSITORY
+-------------------------------------------------------------------------------
+Navigate to your project directory, initialize Git (if not already done), and
+link your local repository to the remote GitLab project repository:
+
+    cd ~/Desktop/src/repos/DVS/openapi-generator
+    git init
+    git remote add gitlab https://gitlab.com/xyz-group3243136/openapi-generator.git
+
+
+STEP 2: RECONCILE DIVERGENT HISTORY & RESOLVE MERGE CONFLICTS
+-------------------------------------------------------------------------------
+Pull the initial files from the remote repository (allowing unrelated histories)
+and resolve any conflicts (such as duplicate README.md files):
+
+    git pull gitlab main --allow-unrelated-histories --no-rebase
+    git checkout --ours README.md
+    git add README.md
+    git commit -m "fix: resolve README merge conflict"
+
+
+STEP 3: PUSH CODE TO GITLAB & TRIGGER PIPELINE
+-------------------------------------------------------------------------------
+Push your source code, Dockerfile, and .gitlab-ci.yml file to GitLab to 
+automatically trigger the CI/CD pipeline build:
+
+    git push -u gitlab main
+
+
+STEP 4: FIX PIPELINE DOCKER DAEMON CONNECTION (IF NEEDED)
+-------------------------------------------------------------------------------
+If the pipeline fails with a Docker daemon connection error (dind network issue),
+update your .gitlab-ci.yml variables, stage, commit, and push the fix:
+
+    git add .gitlab-ci.yml
+    git commit -m "fix: update dind network variables"
+    git push gitlab main
+
+
+STEP 5: AUTHENTICATE AND PULL THE BUILT IMAGE FROM REGISTRY
+-------------------------------------------------------------------------------
+Once the GitLab pipeline job status changes to "Passed", log in to the GitLab
+Container Registry and pull your newly compiled image:
+
+    docker login registry.gitlab.com
+    docker pull registry.gitlab.com/xyz-group3243136/openapi-generator:latest
+
+
+STEP 6: RUN AND VERIFY THE PUBLISHED DOCKER CONTAINER
+-------------------------------------------------------------------------------
+Execute a test command from the pulled container image to verify it runs properly:
+
+    docker run --rm registry.gitlab.com/xyz-group3243136/openapi-generator:latest version
+
+===============================================================================
