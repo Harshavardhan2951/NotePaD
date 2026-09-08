@@ -35,3 +35,7 @@ git config global alias.<Name> "<<Command here> <for eg: log  --oneline --graph 
 git <alias.name>: after performing the above line try with the this line to test and perform the actions
 
 git branch -a : View both remote and local branches
+
+git commit --amend --no-edit 	-> No Extra Commit MSG, Just commit's the old commit msg 
+
+git show HEAD -- ./Path/to/File 		-> Shows the history of the commit msg and changes
