@@ -1,0 +1,57 @@
+1. Build the foundations (1-2 weeks)
+
+Networking basics: how HTTP/HTTPS, DNS, TCP vs UDP, and REST work
+How a request travels from browser to server and back
+Basic operating system ideas: processes, threads, memory
+Databases: SQL vs NoSQL, indexes, transactions, ACID Properties, Replication, Sharding
+
+2. Learn the core building blocks (2-3 weeks)
+
+Load balancers
+Caching (Redis, CDN, cache invalidation)
+Databases at scale: replication, sharding, partitioning
+Message queues and event streaming (Kafka, RabbitMQ)
+API design (REST, gRPC, GraphQL)
+Proxies, API gateways, rate limiting
+
+3. Understand the key concepts and trade-offs (2 weeks)
+
+Scalability: vertical vs horizontal
+Availability vs consistency, the CAP theorem, eventual consistency
+Latency vs throughput
+Fault tolerance, redundancy, and failover
+Monolith vs microservices
+
+4. Study classic designs (3-4 weeks)
+Work through these in order of difficulty:
+
+URL shortener
+Rate limiter
+Pastebin
+Chat app (WhatsApp)
+News feed (Twitter or Instagram)
+Video streaming (YouTube or Netflix)
+Ride-sharing (Uber)
+
+5. Practice a repeatable framework
+For each design problem, follow the same sequence:
+
+Clarify requirements (functional and non-functional)
+Estimate scale (users, requests per second, storage)
+Sketch the high-level design
+Dive deep into key components
+Discuss bottlenecks and trade-offs
+
+6. Practice actively
+
+Draw diagrams by hand or in a tool like Excalidraw
+Explain your designs out loud, as if in an interview
+Do mock interviews with a friend or peer
+Read engineering blogs from companies like Netflix, Uber, and Meta
+
+Recommended resources
+
+Designing Data-Intensive Applications by Martin Kleppmann (the best deep-dive book)
+System Design Interview by Alex Xu (volumes 1 and 2)
+The “System Design Primer” repo on GitHub (free)
+ByteByteGo and Gaurav Sen on YouTube
